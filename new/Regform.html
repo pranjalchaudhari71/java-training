@@ -1,0 +1,62 @@
+<center>
+    <p><h1>Registration Form Validation</h1></p>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="ngValidApp">
+ 
+<div ng-controller="ngValidController">
+ 
+<form name="chkValidation" novalidate>
+<label>Name</label>
+<input type="text" placeholder="Enter name" name="Name" ng-model="Name" ng-required="true"><br>
+<p style = "color:red" ng-show = "chkValidation.Name.$error.required">This filed is required</p>
+
+<label>Dob</label>
+<input type="date" placeholder="Enter dob" name="Dob" ng-model="Dob" ng-required="true"><br>
+<p style = "color:red" ng-show = "chkValidation.Dob.$error.required">This filed is required</p>
+
+<label>Age</label>
+<input type="number" placeholder="Enter Age" name="Age" ng-model="Age" ng-required="true"><br>
+<p style = "color:red" ng-show = "chkValidation.Age.$error.required">This filed is required</p>
+<p style = "color:red" ng-show = "(!chkValidation.Age.$valid)">Age should be in numeric</p>
+
+ 
+<label>Email</label>
+<input type="email" placeholder="Enter email" name="email" ng-model="email" ng-required="true"><br>
+<p style = "color:red" ng-show = "chkValidation.email.$error.required">This filed is required</p>
+<p style = "color:red" ng-show = "chkValidation.email.$error.email">Not a valid email</p>
+ 
+<label>Password</label>
+<input placeholder="******" type="password" name="Password" ng-model="Password" ng-required="true" ng-minlength="5" ng-maxlength="8"><br>
+<p style = "color:red" ng-show = "chkValidation.Password.$error.required">This filed is required</p>
+<p style = "color:red" ng-show = "(!chkValidation.Password.$valid)">Password between 5 to 8 characters</p>
+ 
+<label>CPassword</label>
+<input placeholder="******" type="password" name="CPassword" ng-model="CPassword" ng-required="true" ng-minlength="5" ng-maxlength="8" compare-to="Password"><br>
+<p style = "color:red" ng-show = "chkValidation.CPassword.$error.required">This filed is required</p>
+<p style = "color:red" ng-show = "(!chkValidation.CPassword.$valid)">Password between 5 to 8 characters</p>
+<div ng-messages="chkValidation.CPassword.$error" ng-if="chkValidation.Password.$touched">
+    <span ng-message="compareTo">Password not matched.</span>
+</div>
+ 
+
+<button type="submit">Submit</button>
+</form>
+ 
+</div>
+ 
+<script>
+var app = angular.module('ngValidApp', []);
+ 
+ app.controller('ngValidController', function($scope) {
+  
+ });
+</script>
+</body>
+</html>
+</center>
+
+
+
+ 

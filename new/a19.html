@@ -1,0 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myapp">
+    <div ng-controller="ctrl1">
+        <input type="text" ng-change="func1()" ng-model="x">
+<p>{{c}}</p>
+    </div>
+    <script>
+        angular.module('myapp',[]).controller('ctrl1',['$scope',function($scope)
+    {
+        $scope.c=0;
+        $scope.func1=function()
+        {
+            $scope.c++;
+        }
+        
+
+    }]);
+    </script>
+</body>
+

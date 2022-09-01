@@ -1,0 +1,43 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="myapp" ng-controller="ctrl1">
+
+    <p ng-style="st1">
+
+    Hello!
+
+    <br>
+
+    i have to tell yuo something.
+
+    <br>
+
+    will you listen to me?
+
+</p>
+
+<script>
+
+var app=angular.module("myapp",[]);
+
+app.controller("ctrl1",function($scope)
+
+{
+
+    $scope.st1=
+
+    {
+
+        "background-color":"grey",
+
+        "color":"yellow",
+
+        "font-size":"23px"
+
+    }
+
+});
+
+</script>
+
+</body>

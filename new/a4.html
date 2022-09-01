@@ -1,0 +1,18 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+    <div ng-app="" ng-init="qty=0;rate=0.0">
+
+        Quantity:<input type="number" ng-model="qty">
+
+        <br>
+
+        Rate/Unit:<input type="text" ng-model="rate">
+
+        <p>Total :{{qty*rate}}</p>
+
+
+
+    </div>
+
+</body>

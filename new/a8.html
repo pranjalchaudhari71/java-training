@@ -1,0 +1,23 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="" ng-init="names=[{nm:'Pranjal',age:'24'},{nm:'Harshal',age:'24'}]">
+
+        <p> Name: <input type="text" ng-model="name"></p>
+
+        <p ng-bind="name"></p>
+
+        <p>&nbsp;</p>
+
+        <p ng-repeat="mynm in names">
+
+          Name:  {{mynm.nm}} ({{mynm.age}})
+
+        </p>
+
+
+
+    </div>
+
+</body>

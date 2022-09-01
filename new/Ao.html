@@ -1,0 +1,71 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<html ng-app="dashboard">
+
+<body ng-controller="myController">
+    <table> 
+<tr>
+<td colspan='2'>
+
+</td>
+</tr>
+<tr>
+<td>Enter First no</td>
+<td><input type="text" ng-model="number1"></td>
+</tr>
+<tr>
+<td>Enter Second no</td>
+<td><input type="text" ng-model="number2"></td>
+</tr>
+<tr>
+<td>Select Operator</td>
+<td><select ng-model="operation"
+ng-options="item for item in operations">
+</select></td>
+</tr>
+<tr>
+<td>Result is</td>
+<td>{{result}}</td>
+<tr>
+<td><input type="button" ng-click="AddMe()" value="Result"></td>
+</tr>
+</table>
+</body>
+
+<script>
+var dashboard = angular.module("dashboard", []);
+
+dashboard.controller('myController', function($scope) {
+
+$scope.operations = [ '+', '-', '*', '/', '%' ];
+$scope.AddMe = function() {
+
+var num1 = $scope.number1;
+var num2 = $scope.number2;
+switch ($scope.operation) {
+case '+':
+$scope.result = parseInt(num1) + parseInt(num2);
+break;
+case '-':
+$scope.result = parseInt(num1) - parseInt(num2);
+break;
+case '*':
+$scope.result = parseInt(num1) * parseInt(num2);
+break;
+case '/':
+$scope.result = parseInt(num1) / parseInt(num2);
+break;
+case '%':
+$scope.result = parseInt(num1) % parseInt(num2);
+break;
+default:
+$scope.message = "Invalid Selection ";
+break;
+
+}
+};
+
+});
+</script>
+
+</html>

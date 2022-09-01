@@ -1,0 +1,25 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="myapp" ng-controller="ctrl1">
+
+        <p>My name is: {{nm|uppercase}} {{srnm|lowercase}}</p>
+
+    </div>
+
+    <script>
+
+        angular.module("myapp", []).controller("ctrl1", function($scope)
+
+        {
+
+            $scope.nm="Pranjal",
+
+            $scope.srnm="Chaudhari"
+
+        });
+
+    </script>
+
+</body>

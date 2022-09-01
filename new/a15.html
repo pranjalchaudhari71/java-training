@@ -1,0 +1,19 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="">
+    Course:
+    <select ng-model="cr">
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="DotNet">DotNet</option>
+        <option value="PHP">PHP</option>
+    </select>
+    <hr>
+    <div ng-switch="cr">
+        <div ng-switch-when ="Java">Java</div>
+        <div ng-switch-when ="Python">Python</div>
+        <div ng-switch-when ="DotNet">DotNet</div>
+        <div ng-switch-when ="PHP">PHP</div>
+        
+    </div>
+</body>
+

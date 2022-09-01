@@ -1,0 +1,28 @@
+
+<html>
+<head>  
+    <h1>Enter phone number</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>  
+        .error {  
+            color: red;  
+        }  
+    </style>  
+    <script>  
+        var app = angular.module('myApp', []);  
+  
+        app.controller('mainCtrl', function ($scope) {  
+        $scope.phoneNumbr =   /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/; 
+        });  
+    </script>  
+</head>  
+<body ng-app="myApp">  
+    <ng-form name="myForm" ng-controller="mainCtrl">  
+        
+        <div>  
+            <input type="text" name="phone" ng-pattern="phoneNumbr" ng-model="phone" />  
+            <br><span class="error" ng-show="myForm.phone.$error.pattern">Please Enter the Phone no like [xxxxxxxxxx]</span>  
+        </div>  
+    </ng-form>  
+</body> 
+</html> 

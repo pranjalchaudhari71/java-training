@@ -1,0 +1,26 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myapp">
+<form ng-submit="submit()" ng-controller="ctrl1">
+    <input type="text" name="text" ng-model="text">
+        <br>
+        <input type="submit" value="show">
+        <p>{{list}}</p>
+    </form>
+    
+    <script>
+        angular.module("myapp",[]).controller("ctrl1",['$scope',function($scope)
+        {
+        $scope.list=[];
+        $scope.text="all the names will appear here";
+        $scope.submit=function()
+        {
+            if($scope.text)
+            {
+                $scope.list.push(this.text);
+                $scope.text="";
+            }
+        };
+        }]);
+    </script>
+    </body>
+

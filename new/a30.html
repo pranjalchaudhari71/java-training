@@ -1,0 +1,15 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="">
+    <form>
+        <input type="radio" ng-model="x" value="M">Male
+        <input type="radio" ng-model="x" value="F">Female
+    </form>
+    <div ng-switch="x">
+        <div ng-switch-when="M">
+            <p>Male</p>
+        </div>
+        <div ng-switch-when="F">
+            <p>Female</p>
+        </div>
+    </div>
+</body>

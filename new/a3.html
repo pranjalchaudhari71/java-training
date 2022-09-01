@@ -1,0 +1,27 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="app1" ng-controller="mycnt1">
+
+        Name :<input type="text" ng-model="mynm1">
+
+        <p>{{mynm1}}</p>
+
+       </div>
+
+       <script>
+
+        var app=angular.module('app1',[]);
+
+        app.controller('mycnt1',function($scope)
+
+        {
+
+         $scope.mynm1="Pranjal";
+
+        });
+
+       </script>
+
+</body>

@@ -1,0 +1,21 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myapp" ng-controller="ctrl1">
+    <form ng-submit="func1()">
+        <input type="text" name="nm">
+        <br>
+        <input type="submit" value="Show">
+    </form>
+    <p>{{abc}}</p>
+    <script>
+        var app=angular.module("myapp", []);
+        app.controller("ctrl1", function($scope)
+        {
+            $scope.abc="Yet to be submitted";
+            $scope.func1=function()
+            {
+                $scope.abc="Submitted";
+            }
+        });
+    </script>
+</body>
+

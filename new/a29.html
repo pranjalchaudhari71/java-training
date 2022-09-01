@@ -1,0 +1,58 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+    <div ng-app="myapp" ng-controller="ctrl1">
+        <table align="center" border="1">
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" ng-model="bikes.name"></td>
+            </tr>
+            <tr>
+                <td>year of Manufacture: </td>
+                <td><input type="text" ng-model="bikes.yr"></td>
+            </tr>
+            <tr>
+                <td>Bike: </td>
+                <td>{{bikes.func1()}}</td>
+            </tr>
+            <tr>
+                <td>Description: </td>
+                <td>
+                    <table bgcolor="#d6d6d6">
+                        <tr>
+                            <td>Color: </td>
+                            <td>Condition: </td>
+                        </tr>
+                        <tr ng-repeat="x in bikes.bikesd">
+                            <td>{{x.color}}</td>
+                            <td>{{x.condn}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var myapp=angular.module("myapp", []);
+        myapp.controller("ctrl1", function($scope)
+        {
+            $scope.bikes=
+            {
+                name:"CBZ",
+                yr:"2022",
+            
+            bikesd:
+            [
+                {color: 'Red', condn:'Good'},
+                {color: 'Black', condn:'Average'},
+                {color: 'White', condn:'Excellent'},
+            ],
+            func1:function()
+            {
+                var bk;
+                bk=$scope.bikes;
+                return bk.name + " (" + bk.yr + ") ";
+            }
+        };
+    });
+    </script>
+</body>

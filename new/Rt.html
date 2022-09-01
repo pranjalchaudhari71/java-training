@@ -1,0 +1,58 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var myApp = angular.module("app", []);
+        myApp.controller("controller", function($scope) {
+            $scope.selRating = '';
+            $scope.getVal = function(rating) {
+                $scope.selRating = angular.copy(rating);
+            };
+        });
+    </script>
+ 
+<body style="text-align:center;">
+    
+    <h3> Rating </h3>
+    <div ng-app="app">
+        <div ng-controller="controller">
+            <form action="javascript:void(0)"> 5 :  
+                <input type="radio"
+                       name="userRating"
+                       ng-model='rating'
+                       value="Excellent" />
+                <br> 
+                <form action="javascript:void(0)">  4 : 
+                <input type="radio"
+                       name="userRating"
+                       ng-model='rating'
+                       value="Good" />
+                <br>
+                <form action="javascript:void(0)"> 3 :  
+                <input type="radio"
+                       name="userRating"
+                       ng-model='rating'
+                       value="bad" />
+                <br>
+                <form action="javascript:void(0)"> 2 :  
+                <input type="radio"
+                       name="userRating"
+                       ng-model='rating'
+                       value="Poor" />
+                <br>
+                <form action="javascript:void(0)"> 1 :  
+                <input type="radio"
+                       name="userRating"
+                       ng-model='rating'
+                       value="VeryPoor" />
+<br>
+<br>
+
+                <button ng-click="getVal(rating)">
+                     Click here
+                </button>
+            </form>
+             
+<p>Chosen Rating = {{selRating}}</p>
+ 
+        </div>
+    </div>
+</body>

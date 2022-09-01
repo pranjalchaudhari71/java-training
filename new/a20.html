@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html>
+<header>
+<title>Background Color <Select></Select></title>
+</header>
+<form name="bgcolorForm">
+<center>
+<h1>Select Background Color:</h1><br><br>
+<select onChange="if(this.selectedIndex!=0)
+document.bgColor=this.options[this.selectedIndex].value">
+<option value="0" selected></option>
+<option value="red">Red</option>
+<option value="green">Green</option>
+<option value="blue">Blue</option>
+<option value="grey">Grey</option>
+</select>
+</center>
+</form>
+</html> -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+Course:
+
+ <hr>
+
+ <div ng-app="" ng-init="clr">
+    <select ng-model="clr" >
+
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="yellow">yellow</option>
+        <option value="pink">pink</option>
+        </select>
+
+<p style ="background-color:{{clr}}" ng-model="clr" value="clr">
+<!--<p>Color:<input type="" style ="background-color:{{clr}}" value="controller" ng-model="clr"></p> -->
+<!-- <p style ="background-color:{{clr}}" ng-model="clr" value="clr"> -->
+
+<br>
+I have to tell something...
+<br>
+will you listen to me?
+</p>
+</div>
+</body
+

@@ -1,0 +1,12 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="">
+    <input type="text" ng-keydown="c=c+1" ng-init="c=0">
+    <p><b>{{c}}</b>times keydown</p>
+<p>&nbsp;</p>
+<input type="text" ng-keyup="d=d+1" ng-init="d=0">
+<p><b>{{d}} </b>times keyup</p>
+<p>&nbsp;</p>
+<input type="text" ng-keypress="e=e+1" ng-init="e=0">
+<p><b>{{e}} </b>times keypress</p>
+</body>
+
